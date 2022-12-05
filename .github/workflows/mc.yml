@@ -32,8 +32,9 @@ jobs:
             export VAR="${{ github.event.inputs.link }}"
             printenv VAR
              pip3 install torrentp
+             cd files
                python3 torrent.py
-               zip -r file.zip "${{github.event.inputs.filename }}"
+               zip -r file.zip "files"
                sudo apt install jq -y
                curl -F "file=@file.zip" https://api.anonfiles.com/upload >>outputs.txt
                
