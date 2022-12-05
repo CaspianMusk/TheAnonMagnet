@@ -36,7 +36,6 @@ jobs:
                python3 torrent.py
                cd ..
                zip -r file.zip "files"
-               sudo apt install jq -y
                curl -F "file=@file.zip" https://api.anonfiles.com/upload >>outputs.txt
                
       - name: Click To View Link
